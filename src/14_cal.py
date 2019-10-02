@@ -18,7 +18,24 @@ and does the following:
    the format that your program expects arguments to be given.
    Then exit the program.
 """
-
+# core modules
 import sys
 import calendar
 from datetime import datetime
+
+month = datetime.now().month
+year = datetime.now().year
+
+# no arguments
+if len(sys.argv) == 1:
+    print(calendar.month(year, month))
+
+# month argument
+elif len(sys.argv) == 2:
+    print(calendar.month(year, int(sys.argv[1])))
+
+ # month and year argument
+elif len(sys.argv) == 3:
+    print(calendar.month(int(sys.argv[2]), int(sys.argv[1])))
+else:
+    print("Please specify no arguments for the current month and year, one argument for that month of this year or else two arguments for that month and year")
